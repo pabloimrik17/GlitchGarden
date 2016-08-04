@@ -13,10 +13,12 @@ public class MusicManager : MonoBehaviour {
 	// Use this for initialization
 	void Start() {
 		audioSource = gameObject.GetComponent<AudioSource> ();
+		SetVolume(PlayerPrefManager.GetMasterVolume());
 		playLevelAudio (0);
 	}
 
 	void OnLevelWasLoaded(int nivel) {
+		SetVolume(PlayerPrefManager.GetMasterVolume());
 		playLevelAudio (nivel);
 	}
 
